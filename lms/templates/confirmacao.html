@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {%extends "base.html"%}
+        {% load static %}
+        <title>{% block title %}Confirmação{% endblock %}</title>
+        {% block extrastyle %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static "css/confirmacao.css" %}" rel="stylesheet">
+        {% endblock %}            
+    </head>
+    <body>
+        {%block container%}
+             <section class="corpo">
+                <div class="conteudo">
+                    <div class="imagem">
+                        <img src="{% static "img/perfil.png" %}" width="50px">
+                    </div>
+<pre class="pre">
+            Nome: Aluno 1
+            Série: 9º Ano
+            RA: 1
+            Histórico de Notas <a href="historico.html" button class="bot"><span>Ver</span></button></a>
+
+            <button class="botao" style="background-color: #3CB371"><span>Aceitar</span></button> <button class="botao" style="background-color: #B22222"><span>Recusar</span></button>
+</pre>
+                </div>
+            </section>
+        {%endblock%}
+    </body>
+</html>

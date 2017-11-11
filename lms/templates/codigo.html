@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {%extends "base.html"%}
+        {% load static %}
+        <title>{% block title %}Acesso{% endblock %}</title>
+        {% block extrastyle %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static "css/codigo.css" %}" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        {% endblock %}
+    </head>
+    <body>
+        {%block container%}
+        <div class="corpo">
+            <p>Digite o código para acessar a matrícula:</p>       
+            <form method="post" action="" class="login" id="form-login">
+                <p>
+                    <label for="codigo">Código de acesso:</label>
+                    <input type="text" name="codigo" id="codigo" placeholder="Código" value="">
+                </p>
+                    
+                <p class="login-submit">
+                    <a href="matricula.html" button class="botao"><span>Acessar</span></button> </a>
+                </p>
+            </form>
+        </div>
+        {%endblock%}
+    </body>
+
+

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {%extends "base.html"%}
+        {% load static %}
+        <title>{% block title %}Login{% endblock %}</title>
+        {% block extrastyle %}
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href="{% static "css/matricula.css" %}" rel="stylesheet">
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        {% endblock %}>
+
+        
+        
+    
+    </head>
+    
+    <body>
+       {%block container%}
+       <div class="corpo">
+        <div id="carregando" style="display:none;"> <!-- block Dar efeito de conexao-->
+            <div id="1379907588516" style="position: fixed;top: 0px;left: 0px;opacity: 0.5;z-index:-1 ">
+                <div style="position: relative;top: 250px;left: 40%;width: 50%">
+                    
+                </div>
+            </div>
+        </div>
+        
+        <!--<nav>
+        <a href="#matricula">Matrícula</a>
+        </nav><br>-->
+
+        <section id="matricula">
+            <div>
+                <form action="novoaluno" method="POST" enctype="multipart/form-data">
+                    <label for="input_nomecompleto"> Nome Completo</label><br>
+                    <input name="nomecompleto" id="input_nomecompleto" >
+                    <button class="botao"><span>Limpar</span></button><br/><br/>
+                    
+                    <label for="input_numerocel">Celular</label><br>
+                    <input type="number" name="numerocel" id="input_numerocel" size="11">
+                    <button class="botao"><span>Limpar</span></button><br/><br/>
+                    
+                    <label for="input_email">E-mail</label>:<br>
+                    <input type="email" name="email" id="email">
+                    <button class="botao"><span>Limpar</span></button><br/><br/>
+                    
+                    
+                        <!--<br><br><from>
+                        <button type="cadastrar">Cadastrar</button> -->
+                </form>
+            </div>
+
+        </section>
+    
+    <h3>Carregar foto</h3>
+        <form action="" method="post" enctype="multipart/form-data">{% csrf_token %}
+                <p>
+                    <input id="id_image" type="file" class="" name="image">
+                </p>
+                <button class="botao"><span>Enviar</span></button>
+        </form>
+       </div>
+    {%endblock%}
+    </body>
+</html>
+
+
+
+

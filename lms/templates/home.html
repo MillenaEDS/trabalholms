@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {%extends "base.html"%}
+        {% load static %}
+        <title>{% block title %}Início{% endblock %}</title>
+        {% block extrastyle %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static "css/home.css" %}" rel="stylesheet">
+        {% endblock %}
+               
+    </head>
+    <body>
+        {%block container%}
+             <section class="corpo">
+                <div class="conteudo">
+                    <div class="imagem">
+                        <img src="{% static "img/lapis.png" %}" >
+                    </div>
+                    <div class="texto">
+                        BEM-VINDO AO<br/>
+                        NOSSO PORTAL<br/>
+                        <button class="botao"><span>Login</span></button><br/>
+                        <br/><button class="botao"><span>Cadastre</span></button>
+                    </div>
+                    <div class="fundo">
+                        <img src="{% static "img/nuvem.png" %}" width="False">
+                    </div>
+                    <div class="im1">
+                        <img src="{% static "img/relogio.png" %}" width="70px">
+                        <br/>Bla bla bla bla bla bla<br/> Bla bla bla<br/> Bla bla bla<br/> Bla bla bla<br/> Bla bla bla<br/> Bla bla bla<br/> Bla bla bla<br/> Bla bla bla
+                    </div>  
+                    <div class="im2">
+                        <img src="{% static "img/caderno.png" %}" width="70px">
+                        <br/>Bla bla bla<br/> Bla bla bla<br/> Bla bla bla<br/> Bla bla bla<br/> Bla bla bla<br/> Bla bla bla<br/> Bla bla bla<br/> Bla bla bla
+                    </div>
+                    <div class="im3">
+                        <img src="{% static "img/mochila.png" %}" width="70px">
+                        <br/>Bla bla bla<br/> Bla bla bla<br/> Bla bla bla<br/> Bla bla bla<br/> Bla bla bla<br/> Bla bla bla<br/> Bla bla bla<br/> Bla bla bla
+                    </div>
+                </div>
+            </section>
+        {%endblock%}
+    </body>
+</html>
+
+

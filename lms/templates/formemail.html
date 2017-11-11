@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+        {%extends "base.html"%}
+        {% load static %}
+        <title>{% block title %}Formulários de E-mails{% endblock %}</title>
+        {% block extrastyle %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static "css/formemail.css" %}" rel="stylesheet">
+        <meta charset="utf-8">
+        {% endblock %}
+	</head>
+	<body>
+	{%block container%}
+		<!--<body background="tela.png">-->
+		<div class="corpo">
+			<center>
+			<h2>Formulários de E-mail</h2>
+			<p>Utilize esse formulário para receber e-mails</p>
+			<table>	
+			<tr>
+				<!--<input type="hidden" value="caique_kaio15@hotmail.com" name="meu_email">-->
+					<th><label>Nome:</label></br></th>
+					<th><input type="text" name="name" maxlength="30" placeholder= "Digite seu nome completo" size="50" required="true"></br></th>
+				</tr>
+				<tr>
+					<td><label>E-mail:</label></br></td>
+					<td><input type="text" name="email" size="50" placeholder="Digite seu E-mail"></br></td>
+					</br>
+				</tr>
+			</table>
+			<!--<label>Mensagem:</label></br>
+			<p></p>-->
+			</br>
+			<button class="botao"><span>Limpar</span></button><br/>
+			<br/><button class="botao"><span>Enviar</span></button>
+			<!--<a href=""></a>-->
+			</form>
+	</div>
+	{%endblock%}
+	
+
+</body> 
+</html>

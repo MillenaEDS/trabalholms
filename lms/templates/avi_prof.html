@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {%extends "base.html"%}
+        {% load static %}
+        <title>{% block title %}Avisos{% endblock %}</title>
+        {% block extrastyle %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static "css/aviso.css" %}" rel="stylesheet">
+        <script type="text/javascript" src="{% static "js/aviso.js" %}"></script>
+        {% endblock %}           
+    </head>
+    <body>
+        {%block container%}
+            <section class="corpo">    
+                <form class="margem">
+                    <br><br><br>
+                    <textarea placeholder = '   Digite aqui o seu aviso' rows="20" cols="80"></textarea><br>
+                    <button class="botao"><span>Salvar</span></button>
+                    <button class="botao"><span>Alterar</span></button>
+                    <button class="botao"><span>Excluir</span></button>
+                    <button class="botao"><span>Publicar</span></button>
+                    <br><br><br>
+                </form>
+            </section>
+        {%endblock%}
+    </body>
+</html>
+
+
