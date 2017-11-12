@@ -1,0 +1,87 @@
+.corpo{
+    width: 100%;
+    margin: auto;
+    background: #345ca2
+}
+.conteudo{
+    display: table;
+
+}
+
+.texto{
+    position: absolute;
+    top:140px;
+    left:240px;
+    display: table-cell;
+    float: left;
+    width: 300px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.fundo{
+    position:relative;
+    top:45px;
+    left:80px;
+    margin-top: -10px
+}
+
+.imagem{
+    position: absolute;
+    top:140px;
+    left:120px;
+    display: table-cell;
+    float: left;
+    margin-top: 50px;
+}
+
+.botao {
+  display: inline-block;
+  border-radius: 12px;
+  background-color: #243f6e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 10px;
+  padding: 8px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top: 5px
+
+}
+
+.botao span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.botao span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.botao:hover span {
+  padding-right: 25px;
+}
+
+.botao:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+
+
+
+
+form.center{
+	text-align: center
+
+}
+
