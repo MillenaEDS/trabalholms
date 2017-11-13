@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {%extends "base.html"%}
+        {% load static %}
+        <title>{% block title %}Histórico{% endblock %}</title>
+        {% block extrastyle %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static "css/hist.css" %}" rel="stylesheet">
+        {% endblock %}            
+    </head>
+    <body>
+        {%block container%}
+             <section class="corpo">
+                <pre>
+                Atividade
+                Fulano fez tal coisa
+                13 de novembro de 2017 às 09:15</pre>
+            </section>
+        {%endblock%}
+    </body>
+</html>
