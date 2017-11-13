@@ -24,5 +24,6 @@ urlpatterns = [
     url(r'^matricula', matricula),
     url(r'^confirmacao', confirmacao),
     url(r'^aviso', aviso),
+    url(r'^hist', hist),
     url(r'^admin/', admin.site.urls),
 ]
