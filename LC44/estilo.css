@@ -1,0 +1,25 @@
+body{
+	background: ;
+	font-size: 20px;
+	text-align: left;
+	//*text-align: justify;*//
+}
+
+//*table{
+	text-align: center;
+}*//
+
+th, td {
+	text-align:left;
+}
+
+h2{
+	color:black;
+	font-family:Lucida Console;
+	text-decoration: underline;
+	text-transform: capitalize;
+}
+
+button{
+	text-align: left;
+}
