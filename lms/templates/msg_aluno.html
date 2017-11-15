@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {%extends "base.html"%}
+        {% load static %}
+        <title>{% block title %}Mensagem ao Professor{% endblock %}</title>
+        {% block extrastyle %}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{% static "css/msg_aluno.css" %}" rel="stylesheet">
+
+        {% endblock %}           
+    </head>
+    <body>
+        {%block container%}
+            <section class="corpo">    
+                <form class="margem">
+                    <br><br><br>
+                    <textarea placeholder = 'Digite aqui sua mensagem' rows="20" cols="80"></textarea><br/><br/>
+					
+					Selecione o professor: <br/>
+					<select name="professor">
+					<option></option>
+					<option>Leonardo Takuno</option>
+					<option>Osvaldo Takai</option>
+					<option>Sand Jaques Onofre</option>
+					<option>Vanderson Bossi</option>
+					</select></br></br>
+					
+                    <button class="botao"><span>Salvar</span></button>
+                    <button class="botao"><span>Alterar</span></button>
+                    <button class="botao"><span>Excluir</span></button>
+                    <button class="botao"><span>Enviar</span></button>
+                    <br><br><br>
+                </form>
+            </section>
+        {%endblock%}
+    </body>
+</html>
+
+
