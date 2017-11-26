@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block main %}
+
+<h1>Área Restrita</h1>
+        <form method="POST" action="">
+            {% for turma in turmas %}
+            <div>
+                <h2>{{ turma.turma }}</h2>
+                <ul>
+                    {% for questao in questoes %}
+                        <li>{{ questao }}</li>
+                    {% empty %}
+                        <li>Essa turma ainda não possui questões</li>
+                    {% endfor %}
+                </ul>
+                <p class="acoes">
+                    <a href="{% url 'questao_form' %}">Adicionar Questão</a>
+                </p>
+            </div>
+            {% endfor %}
+            {% csrf_token %}
+            
+        </form>
+    {% endblock %}

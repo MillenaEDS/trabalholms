@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+    {% block title %}Index{% endblock %}
+    {% block main %}
+        <h1>Olá Django</h1>
+        {% if user %}
+            <p>Olá {{ user | upper }}, tudo bem?</p>
+        {% endif %}
+        <ul>
+            {% for curso in cursos %}
+                {% if curso.ativo %}
+                    <li class="{{ curso.classe }}">{{ curso.nome }} - {{curso.sigla}}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        {% if perfil == 'aluno' %}
+            <p>Conteúdo para Alunos!</p>
+        {% elif perfil == 'professor' %}
+            <p>Conteúdo para Professores!</p>
+        {% endif %}
+    {% endblock %}
