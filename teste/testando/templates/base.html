@@ -1,13 +1,24 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>{% block title %}{% endblock %}</title>
+		<meta charset="utf-8"/>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+		rel="stylesheet"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     </head>
     <body>
-        <header>
-            <h1>Escola Floresta</h1>
+        <center><header>
+		
+            <h2>Escola <em>FLORESTA</em></h2>
+	  <p>Mudando o futuro da Educação Brasileira.</p>
+		</div>
             <nav>
-                <a href="/">Index</a>
+			
+                <a href="/home">home</a>
                 <a href="/aluno">Área Aluno</a>
                 <a href="/professor">Área Professor</a>
                 {% if not user.is_authenticated %}
@@ -16,16 +27,26 @@
                     {{ user }}
                     <a href="/logout">Logout</a>
                     <a href="{% url 'restrito' %}">Restrito</a>
+                    <a href="{% url 'restrito_aluno' %}">Restrito Aluno</a>
                 {% endif %}
+				<a href="/calendario_aluno">Calendário</a>
+				<!--<a href="/editar_perfil"></a>-->
                 <a href="/change-password">Mudar Senha</a>
                 <a href="/contato">Contato</a>
             </nav>
-        </header>
+        </header></center><br></br>
+		<div class="ativi">
+		<div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+				 <center><img src = "{% static 'img/gurizada.png'%}" width = "500px"></center>
         <main>
             {% block main %}{% endblock %}
-        </main>
-        <footer>
-            <h6>Todos os direitos reservados</h6>
-        </footer>
+        </main><br><br><br><br><br>
+   <center><footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+		  <div class="w3-xlarge w3-padding-32">
+		  
+			 <img src="{% static 'img/rodape.png' %}" width="50%">
+		 </div>
+		 <p>Produzido por Grupo ADS 2ºA <a href="https://www.impacta.com.br" target="_blank"> Impacta 2017.</a></p>
+	</footer></center>
     </body>
 </html> 

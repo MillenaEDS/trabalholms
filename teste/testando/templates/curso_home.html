@@ -1,0 +1,69 @@
+{% extends "homeb.html" %}
+{% load static %}
+{% block title %}Disciplinas{% endblock %}
+	
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link  rel="stylesheet" type="text/css" href="{% static 'css/aviso.css' %}"/>
+		<link  rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}"/>
+		<link href="{% static 'css/stylo.css' %}" rel="stylesheet"/>
+	
+	{% block content %}
+			<header class="w3-container w3-blue w3-center" style="padding:128px 80px">
+		
+			<div class="img1">
+				 <a href="/matricula"><img src="{% static 'img/lapis1.png' %}"></a>
+				<h3><strong>Matemática Aplicada - EAD</strong></h3><br>
+				<pre>Tem como objetivo geral: Capacitar o aluno com 
+conhecimentos gerais sobre Matemática, facilitando
+o desenvolvimento do seu raciocínio frente às 
+situações problemas vividas no campo empresarial, 
+permitindo-o aplicar a teoria à prática.
+				</pre>
+			</div>
+			<div class="img2">
+				<a href="/matricula"><img src="{% static 'img/lapis2.png' %}"></a>
+				<h3><strong>Literatura Vl.2 - EAD</strong></h3><br>
+				<pre>Tem como objetivo geral: Especializaro aluno
+para planejar e executar projetos, na área
+de Literatura, utilizando, de forma crítica, as
+novas tecnologias da informação e comunicação
+Para a consecução desse objetivo maior, o 
+curso propõe como objetivos específicos: 
+contribuir para melhoria do processo
+ensino-aprendizagem da Leitura e da Literatura.
+				</pre>
+			</div>
+			<div class="img3">
+				<a href="/matricula"><img src="{% static 'img/lapis3.png' %}"></a>
+				<h3><strong>História da Arte - EAD</strong></h3><br>
+				<pre>Tem como objetivo geral: Introdução à
+história da arte, com ênfase na 
+compreensão e na reflexão sobre as
+práticas relativas à arte atual,
+bem como inserir a arte tecnologia
+ou a mídia art no contexto da arte 
+contemporânea, demonstrando que as 
+novas mídias não são segmentadas, mas
+integradas à história da arte desde
+o Modernismo com seus antecedentes
+históricos, até a atualidade.
+				</pre>
+			</div>
+			<div class="img4">
+				<a href="/matricula"><img src= "{% static 'img/lapis4.png' %}"></a>
+				<h3><strong>Química</strong></h3><br>
+				<pre>Qualificar-se em novas estratégias e 
+metodologias de ensino proporciona
+recursos para enfrentar esse processo
+de ensino-aprendizagem. Por exemplo,
+as situações contextualizadas, com base
+em uma abordagem alternativa de Resolução
+de Problemas, com auxílio de tecnologias 
+computacionais, discutir questões ambientais
+e estatísticas relacionadas à química das águas,
+do solo e da atmosfera.
+				</pre>
+			</div>
+	
+	{% endblock %}

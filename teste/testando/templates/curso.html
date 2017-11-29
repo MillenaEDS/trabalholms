@@ -1,16 +1,40 @@
-{% extends 'base.html' %}
-    {% block title %}Curso{% endblock %}
-    {% block main %}
-        <h1>Curso</h1>
-        <form method="POST" action="">
+{% extends "cabeca.html" %}
+{% load static %}
+{% block title %}Curso{% endblock %}
+	
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link  rel="stylesheet" type="text/css" href="{% static 'css/aviso.css' %}"/>
+		<link  rel="stylesheet" type="text/css" href="{% static 'css/estilo.css' %}"/>
+		<link href="{% static 'css/stylo.css' %}" rel="stylesheet"/>
+		<meta charset="UTF-8"/>
+		<style>
+			body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+			.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+			.fa-anchor,.fa-coffee {font-size:200px}
+		</style>
+		
+		{% block content %}
+		<div class="ativi">
+		<div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+		
+        <center><br><br><br><h1>Curso</h1></center>
+		<!--<img src="{% static 'img/teste.png' %}"> -->
+        <center><form method="POST" action="">
+		
+		
             {% for input in form %}
+			
             <div>
                 {{ input.label_tag }}
                 {{ input }}
                 {{input.errors}}
+				
             </div>
             {% endfor %}
             {% csrf_token %}
             <button type="submit">Enviar</button>
-        </form>
+
+        </form></center>
+		
     {% endblock %}

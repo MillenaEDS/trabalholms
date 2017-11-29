@@ -16,25 +16,33 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth.views import login, logout
-from testando.views import index, contato, curso, aluno, professor, restrito, questao_form
+from testando.views import index, home,contato, curso, calendario, area_aluno, curso_home, sobre, aluno, professor, restrito, questao_form, resposta_form, restrito_aluno
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    url(r'^$', index, name="home"),
+    url(r'^index', index, name="index"),
+    url(r'^$', home, name="home"),
+    url(r'^home', home),
     url(r'^aluno/', aluno),
+    url(r'^calendario/', calendario),
+    url(r'^curso_home/', curso_home, name = "curso_home"),
     url(r'^professor/', professor),
     url(r'^contato/', contato), 
     url(r'^curso/', curso),
+    url(r'^sobre/', sobre),
     url(r'^login/', login, { "template_name": "login.html" }), 
     url(r'^logout/', logout),
     url(r'^restrito/$', restrito, name="restrito"),
-    url(r'^restrito/questao', questao_form, name="questao_form"),
-    url(r'^change-password/', auth_views.PasswordChangeView.as_view(template_name='mudar_senha.html'),),
+    url(r'^restrito_aluno/$', restrito_aluno, name="restrito_aluno"),
+    url(r'^restrito/(?P<turma_sigla>[A-Z,a-z]+)/questao/(?P<questao_id>[0-9]*)', questao_form, name="questao_form"),
+    url(r'^restrito/(?P<turma_sigla>[A-Z,a-z]+)/resposta/(?P<resposta_id>[0-9]*)', resposta_form, name="resposta_form"),
+    url(r'^change-password/', auth_views.PasswordChangeView.as_view(template_name='mudar_senha.html'), name="mudar",),
     url(r'^admin/', admin.site.urls),
 ]
 
+#media/ doc, jpg
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_ROOT, document_ROOT=settings.MEDIA_ROOT)
  

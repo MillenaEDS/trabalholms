@@ -6,16 +6,17 @@
         <form method="POST" action="">
             {% for turma in turmas %}
             <div>
-                <h2>{{ turma.turma }}</h2>
+                <h2>{{ turma.turma_sigla }}</h2>
                 <ul>
-                    {% for questao in questoes %}
-                        <li>{{ questao }}</li>
+                    {% for questao in turma.questoes %}
+                        <li>{{ questao }} - 
+                        <a href="{% url 'questao_form' turma_sigla=turma.turma_sigla questao_id=questao.id %}">Editar</a></li>
                     {% empty %}
                         <li>Essa turma ainda não possui questões</li>
                     {% endfor %}
                 </ul>
                 <p class="acoes">
-                    <a href="{% url 'questao_form' %}">Adicionar Questão</a>
+                    <a href="{% url 'questao_form' turma_sigla=turma.turma_sigla questao_id='' %}">Adicionar Questão</a>
                 </p>
             </div>
             {% endfor %}

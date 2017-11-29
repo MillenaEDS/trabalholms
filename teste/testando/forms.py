@@ -1,5 +1,5 @@
 from django import forms
-from testando.models import Curso, Questao
+from testando.models import Curso, Questao, Resposta
 
 class CursoForm(forms.ModelForm):
 
@@ -25,4 +25,9 @@ class ContatoForm(forms.Form):
 class QuestaoForm(forms.ModelForm):
     class Meta:
         model = Questao
-        exclude = ["cod_turma"]
+        exclude = ["turma"]
+
+class RespostaForm(forms.ModelForm):
+    class Meta:
+        model = Resposta
+        exclude = ["turma"]

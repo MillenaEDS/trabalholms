@@ -1,0 +1,109 @@
+.fundo{
+
+background: #DCDCDC;
+width: 100%;
+margin: auto;
+}
+
+.img1{
+position:relative;
+top:0px;
+left:0px;
+}
+
+.img2{
+position:absolute;
+top: 10px;
+right:10px
+}
+
+.img3{
+position:absolute;
+top: 500px;
+left:50px
+}
+
+.img4{
+position:absolute;
+top: 500px;
+right:10px
+}
+
+.insta{
+position:relative;
+top:0px;
+left:0px;
+}
+
+.face{
+position:absolute;
+top:1000px;
+right:100px;
+
+}
+
+.you{
+position:absolute;
+top:500px;
+left:50px;
+}
+
+.container{
+	position:relative;
+	width:100%;
+}
+#image{
+	position:absolute;
+	top:350px;
+	left:0;
+	width:100%;
+	
+}
+.texto{
+	letter-spacing:-1px; //separa as letras
+	padding-top:5px;
+	margin-left:30px; //vai p esquerda ou direita ARRASOU
+	float:left;
+}
+
+
+.barra-area {
+margin:100 auto;
+position:relative;
+display:block;
+width:300px
+}
+
+.barra {
+position:relative;
+display:block;
+width:100%;
+background-color:#eee;
+padding:3px;
+-webkit-border-radius:3px;
+-moz-border-radius:3px;
+-o-border-radius:3px;
+border-radius:3px;
+-webkit-box-shadow:inset 0 1px 3px rgba(0, 0, 0, .2);
+-moz-box-shadow:inset 0 1px 3px rgba(0, 0, 0, .2);
+-o-box-shadow:inset 0 1px 3px rgba(0, 0, 0, .2);
+box-shadow:inset 0 1px 3px rgba(0, 0, 0, .2)
+}
+
+.carga {
+height:20px;
+display:block;
+background-color:#3498db;
+width:0%;
+-webkit-border-radius:3px;
+-moz-border-radius:3px;
+-o-border-radius:3px;
+border-radius:3px;
+-webkit-transition:width .8s ease;
+-moz-transition:width .8s ease;
+-o-transition:width .8s ease;
+transition:width .8s ease
+}
+
+//----------------------------------------//
+

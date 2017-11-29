@@ -2,7 +2,8 @@
     {% block title %}Questão{% endblock %}
     {% block main %}
         <h1>Questão</h1>
-        <form method="POST" action="">
+        <h2>{{ turma_sigla }}</h2>
+        <form method="POST" action="" enctype="multipart/form-data">
             {{ form.as_p }}
             {% csrf_token %}
             <button type="submit">Enviar</button>

@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'lms',
         'USER': 'root',
-        'PASSWORD': 'wm95128448',
+        'PASSWORD': 'lu1234',
         'HOST': '127.0.0.1',
         'PORT': '3306'
     }
@@ -133,6 +133,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL ='testando.Usuario'
 
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = 'index'
 
 

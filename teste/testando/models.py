@@ -158,12 +158,12 @@ class Turma(models.Model):
     nome_disciplina = models.ForeignKey(to='Disciplina', related_name = 'tnome_disciplina', db_column='nome_disciplina', null=False)
     ano_ofertado = models.ForeignKey(to='Disciplinaofertada', related_name = 'tano_ofertado', db_column='ano_ofertado', null=False)
     semestre_ofertado = models.ForeignKey(to='Disciplinaofertada', related_name = 'tsemestre_ofertado', db_column='semestre_ofertado', null=False)
-    turma = models.CharField('turma', max_length=1, null=False)
+    turma_sigla = models.CharField(max_length=1, unique=True, null=False)
     turno = models.CharField('turno', max_length=15, null=False)
     ra_professor = models.ForeignKey(to='Professor', related_name = 'tra_professor', db_column='ra_professor', null=False)
-    
+
     def __str__(self):
-        return '%s - %s - %s - %s' % (self.ano_ofertado, self.turma, self.turno, self.ra_professor)
+        return '%s - %s - %s - %s' % (self.ano_ofertado, self.turma_sigla, self.turno, self.ra_professor)
     
     class Meta:
         db_table = 'turma'
@@ -196,70 +196,33 @@ class Matricula(models.Model):
     class Meta:
         db_table = 'matricula'
 
+def monta_arquivo(questao, nome_arquivo):
+    return "{}/{}/{}".format(questao.turma.turma_sigla, questao.numero, nome_arquivo)
+
 class Questao(models.Model):
-    id_questao = models.AutoField('id_questao', primary_key=True)
-    cod_turma = models.ForeignKey(to='Turma', related_name = 'qid_turma', db_column='id_turma', null=False)
-    nome_disciplina = models.ForeignKey(to='disciplina', related_name = 'qnome_disciplina', db_column='nome_disciplina', null=False)
-    ano_ofertado = models.ForeignKey(to='disciplinaofertada', related_name = 'qano_ofertado', db_column='ano_ofertado', null=False)
-    semestre_ofertado = models.ForeignKey(to='disciplinaofertada', related_name = 'qsemestre_ofertado', db_column='semestre_ofertado', null=False)   
-    numero = models.IntegerField('numero', null=False)
-    descricao = models.CharField('descricao', max_length=750, null=False)
-    data_limite_entrega = models.DateField('data_limite_entrega', null=False)
-    arquivo = models.FileField(upload_to="arquivos/")
+    turma = models.ForeignKey(Turma)
+    numero = models.IntegerField("Numero")
+    entrega = models.DateField("Entrega")
+    arquivo = models.FileField(upload_to=monta_arquivo)
 
     def __str__(self):
-        return '%s - %s - %s - %s - %s' % (self.cod_turma, self.numero, self.data_limite_entrega, self.descricao, self.dta)
+        return '%s' % (self.numero)
     
-    class Meta:
-        db_table = 'questao'
-
-'''class Arquivoquestao(models.Model):
-    id_arquivoquestao = models.AutoField('id_arquivoquestao', primary_key=True)
-    nome_disciplina = models.ForeignKey(to='disciplina', related_name = 'aqnome_disciplina', db_column='nome_disciplina', null=False)
-    ano_ofertado = models.ForeignKey(to='disciplinaofertada', related_name = 'aqano_ofertado', db_column='ano_ofertado', null=False)
-    semestre_ofertado = models.ForeignKey(to='disciplinaofertada', related_name = 'aqsemestre_ofertado', db_column='semestre_ofertado', null=False)
-    id_turma = models.ForeignKey(to='Turma', related_name = 'aqid_turma', db_column='id_turma', null=False)
-    numero_questao = models.ForeignKey(to='questao', related_name= 'aqnumero_questao', db_column='numero_questao', null=False)
-    arquivo = models.CharField('arquivo', max_length=750, null=False)
-    
-    def __str__(self):
-        return '%s - %s' % (self.numero_questao, self.arquivo)
-    
-    class Meta:
-        db_table = 'arquivoquestao'
+def sobe_arquivo(resposta, nome_arquivo):
+    return "{}/{}/{}".format(resposta.turma.turma_sigla, resposta.questao.numero, nome_arquivo)
 
 class Resposta(models.Model):
-    id_resposta = models.AutoField('id_resposta', primary_key=True)
-    nome_disciplina = models.ForeignKey(to='disciplina', related_name = 'rnome_disciplina', db_column='nome_disciplina', null=False)
-    ano_ofertado = models.ForeignKey(to='disciplinaofertada', related_name = 'rano_ofertado', db_column='ano_ofertado', null=False)
-    semestre_ofertado = models.ForeignKey(to='disciplinaofertada', related_name = 'rsemestre_ofertado', db_column='semestre_ofertado', null=False)
-    id_turma = models.ForeignKey(to='Turma', related_name = 'rid_turma', db_column='id_turma', null=False)
-    numero_questao = models.ForeignKey(to='questao', related_name= 'rnumero_questao', db_column='numero_questao', null=False)
-    ra_aluno = models.ForeignKey(to='Aluno', related_name= 'raluno', db_column='ra_aluno', null=False)
-    data_avaliacao = models.DateField('data_avaliacao', null=False)
-    nota = models.DecimalField('nota', max_digits=4, decimal_places=2, null=False)
-    avaliacao = models.CharField('avaliacao', max_length=500, null=False)
-    descricao = models.CharField('descricao', max_length=500, null=False)
+    turma = models.ForeignKey(Turma)
+    questao = models.ForeignKey(Questao)
+    entrega = models.DateField("Entrega", null=False)
+    arquivo = models.FileField(upload_to=sobe_arquivo)
+    aluno = models.ForeignKey(Aluno)
     data_de_envio = models.DateField('data_de_envio', null=False)
     
     def __str__(self):
-        return '%s - %s - %s - %s - %s - %s' % (self.numero_questao, self.data_avaliacao, self.nota, self.avaliacao, self.descricao, self.data_de_envio)
-    
-    class Meta:
-        db_table = 'resposta'
+        return '%s' % (self.questao)
 
-class Arquivoresposta(models.Model):
-    id_arquivoresposta = models.AutoField('id_arquivoresposta', primary_key=True)
-    nome_disciplina = models.ForeignKey(to='disciplina', related_name = 'arnome_disciplina', db_column='nome_disciplina', null=False)
-    ano_ofertado = models.ForeignKey(to='disciplinaofertada', related_name = 'arano_ofertado', db_column='ano_ofertado', null=False)
-    semestre_ofertado = models.ForeignKey(to='disciplinaofertada', related_name = 'arsemestre_ofertado', db_column='semestre_ofertado', null=False)
-    id_turma = models.ForeignKey(to='Turma', related_name = 'arid_turma', db_column='id_turma', null=False)
-    numero_questao = models.ForeignKey(to='questao', related_name= 'arnumero_questao', db_column='numero_questao', null=False)
-    ra_aluno = models.ForeignKey(to='Aluno', related_name= 'araluno', db_column='ra_aluno', null=False)
-    arquivo = models.CharField('arquivo', max_length=500)
 
-    def __str__(self):
-        return '%s - %s' % (self.numero_questao, self.arquivo)
-
-    class Meta:
-        db_table = 'arquivoresposta' '''
+'''    nota = models.DecimalField('nota', max_digits=4, decimal_places=2, null=False)
+    avaliacao = models.CharField('avaliacao', max_length=500, null=False)
+    descricao = models.CharField('descricao', max_length=500, null=False)'''

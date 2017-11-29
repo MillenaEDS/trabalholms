@@ -1,12 +1,28 @@
-{% extends 'base.html' %}
+{% extends "cabeca.html" %}
+{% load static %}
+{% block title %}Login{% endblock %}
+{% block content %}
+		<meta charset="utf-8">
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		rel="stylesheet"/>
+        <link href="{% static 'css/stylo.css' %}" rel="stylesheet"/>
+          
+		<div class="respon">
+		<div class ="login">
+			<br><br><br><br><br><br><br><div class="glass">
+				<center><img src="{% static 'img/profaluno.png' %}" class="user" width="270px"></center>
+				<h3>Login</h3>
+				<form method='POST' action="">
+					{{form.as_p}}
+					{% csrf_token %} 
+						
+				<a href='/area_aluno'><button class="botao"><span>Fazer login</span></button>
+				</form>
+			</div>
+				
+		</div>
+			
+		<br><br><br><img src="{% static 'img/guris.png' %}" width="50%">
+		</div>				
 
-{% block main %}
-
-<h1>Login</h1>
-        <form method="POST" action="">
-            {{ form.as_p }}
-
-            {% csrf_token %}
-            <button type="submit" value="Entrar">Entrar</button>
-        </form>
-    {% endblock %}
+{% endblock %}

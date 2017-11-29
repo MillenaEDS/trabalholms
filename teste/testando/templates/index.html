@@ -1,7 +1,16 @@
-{% extends 'base.html' %}
-    {% block title %}Index{% endblock %}
-    {% block main %}
-        <h1>Olá Django</h1>
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Area {% endblock %}
+
+		<meta charset="utf-8"/>
+		
+		{% block content %}
+		<div class="ativi">
+		<div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+	<br><br><br>
+       <center> <h1>Escola <em>Floresta</em></h1>
+				<h6>Mudando a Educação Brasileira</h6>
+				
         {% if user %}
             <p>Olá {{ user | upper }}, tudo bem?</p>
         {% endif %}
@@ -18,3 +27,5 @@
             <p>Conteúdo para Professores!</p>
         {% endif %}
     {% endblock %}
+	</center>
+	

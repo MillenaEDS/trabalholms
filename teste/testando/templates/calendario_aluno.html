@@ -1,0 +1,101 @@
+
+{% load static %}
+<title>Calendário</title>
+{%block extrastyle%}
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+		<link  rel="stylesheet" type="text/css" href="{% static 'css/estilinho.css' %}"/>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+		rel="stylesheet">
+		<link  rel="stylesheet" type="text/css" href="{% static 'textarea.css' %}"/>
+		<link  rel="stylesheet" type="text/css" href="{% static 'css/aviso.css' %}"/>
+		<link  rel="stylesheet" type="text/css" href="{% static 'css/notas_e_faltas_prof.css' %}"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+		<link  rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}"/>
+		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="{% static 'js/script.js' %}"></script>
+				<script type="text/javascript">
+			$(document).ready(function(){
+				$('.sidebarbtn').click(function(){
+					$('.sidebar').toggleClass('active');
+				})
+			})
+		
+		</script>
+		
+		{%endblock%}
+	
+	{% block content %}
+	
+
+	
+	<div class="ativi">
+			<img src="{% static 'img/logo.png' %}" width="10%">
+			<form class="w3-container w3-card-4">
+			 </form>
+			
+				<div class="w3-container">
+			 
+	  <h2>Horário e calendário </h2>
+	  <p>Escola<em> FLORESTA</em></p>
+	
+		  
+		  <div class="w3-container"> 
+		  <div class="w3-card w3-section"> 
+			<header class="w3-container w3-teal">
+			  <h3>Escolha a opção desejada:</h3>
+			  </div><br><br><br><br><br><br>
+
+			
+			<div class="w3-container"> 
+				 
+				<header class="w3-container w3-blue">
+			  <h3><a href="{% static 'img/calendario.jpg' %}">Calendário<h3><a href= "{% static 'img/hr.jpg' %}">Horário</a></h3>
+			</div>
+			</div>
+			 
+	
+			</div>
+		</div>
+		
+		
+		<div class="sidebar">
+			<ul>
+			<li><a href="#"><strong>°EDITAR</strong></a></li>
+				<li><a href="/editar_perfil">Perfil</a></li>
+			</ul>
+			<ul>
+			<li><a href="#"><strong>°ATIVIDADES</strong></a></li>
+				<li><a href="/questao_aberta">AC</a></li>
+				<li><a href="/exercicio">Exercícios</a></li>
+				<li><a href="/trabalho">Trabalho</a></li>
+				<li><a href="/correcao_aluno">Correção</a></li>
+			</ul>
+			<ul>
+			<li><a href="/notas_faltas"><strong>°NOTAS E FALTAS</strong></a></li>
+			</ul>
+			<ul>
+			<li><a href="#"><strong>°DISCIPLINA</strong></a></li>
+				<li><a href="/matricula_aluno">Matrícula</a></li>
+				<li><a href="/codigo_oficial">Código</a></li>
+			</ul>
+			<ul>
+			<li><a href="#"><strong>°HORÁRIO</strong></a></li>
+				<li><a href="/calendario_aluno">Horário e Calendário</a></li>
+			</ul>
+			<ul>
+			<li><a href="/midia_aluno"><strong>°MÍDIA</strong></a></li>
+			</ul>
+			<ul>
+			<li><a href="#"><strong>°CONTATO</strong></a></li>
+				<li><a href="/aviso_prof">Avisos</a></li>
+				<li><a href="/enviar_email">Enviar e-mail</a></li>
+				<li><a href="/mensagem_recebidas_aluno">Mensagens Recebidas</a></li>
+			</ul>
+
+			<button class="sidebarbtn">
+				<span></span>
+			</button>
+		</div>
+{%endblock%}

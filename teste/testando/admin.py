@@ -148,8 +148,8 @@ class PeriodoDisciplinaAdmin(admin.ModelAdmin):
 admin.site.register(Periododisciplina, PeriodoDisciplinaAdmin)
 
 class TurmaAdmin(admin.ModelAdmin):
-    list_display = ('turma', 'turno', 'ra_professor', 'nome_disciplina', 'ano_ofertado','semestre_ofertado',)
-    list_filter =('turma', 'ra_professor', 'turno',)
+    list_display = ('turma_sigla', 'turno', 'ra_professor', 'nome_disciplina', 'ano_ofertado','semestre_ofertado',)
+    list_filter =('turma_sigla', 'ra_professor', 'turno',)
 admin.site.register(Turma, TurmaAdmin)
 
 class CursoTurmaAdmin(admin.ModelAdmin):

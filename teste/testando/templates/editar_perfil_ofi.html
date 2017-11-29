@@ -1,0 +1,53 @@
+{%extends "homeb.html"%}
+{% load static %}
+{% block title %}Editar Perfil{% endblock %}
+{% block extrastyle %}
+    
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="{% static 'css/home.css' %}"/>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+{%block content%}
+  <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+  
+	<br><br><br>
+  <form method="POST" action="">
+  <center><img src="{% static 'img/fundo.png' %}" width="70%"></center>
+  <div class="w3-container w3-padding-large ">
+    
+    <form method="POST" action="/action_page.php" target="_blank">
+		{{form.as_p}}
+		{% csrf_token %} 
+		  <div class="w3-section">
+			<label>Nome</label>
+			<input class="w3-input w3-border" type="text" name="Name" required>
+		  </div>
+		  <div class="w3-section">
+			<label>E-mail</label>
+			<input class="w3-input w3-border" type="text" name="Email" required>
+		  </div>
+		  <label>Celular</label>
+			<input class="w3-input w3-border" type="text" name="Email" required>
+		  </div>
+		  <label>Celular</label>
+			<input class="w3-input w3-border" type="text" name="Email" required>
+		  </div>
+		  </form>
+		  <p>Alterar foto</p>
+		  <form action="" method="post" enctype="multipart/form-data">
+				<p>
+				<input id="id_image" type="file" class="" name="image">
+				</p>
+		  <center><button type="submit" class="w3-button w3-black w3-margin-bottom"><i class="fa fa-paper-plane w3-margin-right"></i>Salvar edição</button></center>
+	</form>
+  </div>
+  </form>
+  {%endblock%}  

@@ -1,0 +1,39 @@
+{% extends "basezinha.html" %}
+{% load static %}
+{% block title %}Area Professor{% endblock %}
+
+		<meta charset="utf-8"/>
+		<link  rel="stylesheet" type="text/css" href="{% static 'estilinho.css' %}"/>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" 
+		rel="stylesheet"/>
+		<link  rel="stylesheet" type="text/css" href="{% static 'css/aviso.css' %}"/>
+		<link  rel="stylesheet" type="text/css" href="{% static 'css/textarea.css' %}"/>
+		<link  rel="stylesheet" type="text/css" href="{% static 'css/confirmacao.css' %}"/>
+		<link  rel="stylesheet" type="text/css" href="{% static 'css/notas_e_faltas_prof.css' %}"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
+		<link  rel="stylesheet" type="text/css" href="{% static 'css/menu.css' %}"/>
+		<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+		
+		
+{% block content %}
+		<div class="ativi">
+		<div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+	<br><br><br>
+		
+			
+				<center> <div class="w3-container">
+	  <h2>Escola <em>FLORESTA</em></h2>
+	  <p>Mudando o futuro da Educação Brasileira.</p></center>
+	
+		  
+		  <div class="w3-container"> 
+		  <div class="w3-card w3-section"> 
+			<center><header class="w3-container w3-yellow">
+			  <h3>Olá professor(a), seja bem-vindo!</h3>
+			</div></center>
+	
+		<center><img src="{% static 'img/prof.png' %}" width="30%"></center>
+		
+		</div>
+{%endblock%}          

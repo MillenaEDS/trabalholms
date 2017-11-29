@@ -1,0 +1,47 @@
+{% extends "homeb.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+<div class="conteudo">
+<header class="w3-container w3-blue w3-center" style="padding:128px 80px">
+  <h4 class="w3-margin w3-jumbo">PORTAL ESCOLA <strong>FLORESTA</strong></h4>
+  <div class="style= background='im1'">
+	<img src="{% static 'img/guris_centro.png' %}" width="100%">
+	</div><br><br><br>
+  <a href="/login"><button class="w3-button w3-yellow w3-padding-large w3-margin-top">Faça seu login.</button></a>
+</header>
+  </div><br><br>
+  
+
+
+<!-- Primeira grade -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+
+    <div class="w3-third">
+	<!--<div class="im1">-->
+	  <img src="{% static 'img/icones.png' %}" width="300%">
+	  <!--</div>-->
+    </div>
+  </div>
+</div>
+	
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-blue w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="style= background='w3-third w3-center'">
+      <img src="{% static 'img/guris.png' %}" width="250px"> <img src="{% static 'img/caderno_vermelho.png' %}" width="700px">
+    </div>
+
+    </div>
+  </div>
+</div>
+</div>
+	
+
+
+
+
+{% endblock %}
